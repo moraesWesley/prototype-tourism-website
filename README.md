@@ -1,7 +1,7 @@
 # prototype-tourism-website
 Protótipo apenas de uma página inicial de um Website voltado para Turismo.
 
-#### Obs.: Bower depende do [Node.js](http://nodejs.org/) e  [npm](http://npmjs.org/). Certifique-se que eles estejam instalados na máquina.
+#### Bower depende do [Node.js](http://nodejs.org/) e  [npm](http://npmjs.org/). Certifique-se que eles estejam instalados na máquina.
 
 # Instalação
 
