@@ -1,28 +1,28 @@
 # prototype-tourism-website
-Protótipo apenas de uma página inicial de um Website voltado para Turismo.
+ProtÃ³tipo apenas de uma pÃ¡gina inicial de um Website voltado para Turismo.
 
-#### Bower depende do [Node.js](http://nodejs.org/) e  [npm](http://npmjs.org/). Certifique-se que eles estejam instalados na máquina.
+#### Bower depende do [Node.js](http://nodejs.org/) e  [npm](http://npmjs.org/). Certifique-se que eles estejam instalados na mÃ¡quina.
 
-# Instalação
+# InstalaÃ§Ã£o
 
 ```
 git clone git@github.com:moraesWesley/prototype-tourism-website.git
 cd prototype-tourism-website
-bower install
 npm install
+bower install
 ```
 
 - Desenvolvimento
 
-Executar estes comandos na pasta raíz
+Executar estes comandos na pasta raÃ­z
 ```
 gulp watch-dev
 live-server
 ```
 
-- Acesso a página
+- Acesso a pÃ¡gina
 
-Visualizar a página em produção, basta seguir o caminho após executar o _live-server_
+Visualizar a pÃ¡gina em produÃ§Ã£o, basta seguir o caminho apÃ³s executar o _live-server_
 ```
 public/views
 ```
