@@ -1,0 +1,670 @@
+//My reset
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+a, button, input{
+    outline: none;
+
+    &:hover{
+        outline: none;
+    }
+    &:click{
+        outline: none;
+    }
+    &:active{
+        outline: none;
+    }
+}
+//presets - usefull css
+.w-100{
+    width: 100%;
+}
+.f-left{
+    float: left;
+}
+.dt{
+    display: table; //display table
+}
+
+
+
+//sass mixins - usefull sass
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box; // stops bg color from leaking outside the border:
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//css transition and animation
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+//fonts-mixin
+@mixin font-montserratregular($font-size, $margin, $color){
+    font-family: 'montserratregular';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+@mixin font-montserratmedium($font-size, $margin, $color){
+    font-family: 'montserratmedium';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+@mixin font-montserratbold($font-size, $margin, $color){
+    font-family: 'montserratbold';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+@mixin font-montserratlight($font-size, $margin, $color){
+    font-family: 'montserratlight';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+@mixin font-montserratextrabold($font-size, $margin, $color){
+    font-family: 'montserratextrabold';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+@mixin font-montserratextralight($font-size, $margin, $color){
+    font-family: 'montserratextralight';
+    font-size: $font-size;
+    color: $color;
+    text-align: center;
+    margin: $margin;
+}
+
+//menu
+.main-menu{
+    position: fixed;//to be front of the slicker slider carousel
+    z-index: 2;//to be front of the slicker slider carousel
+    width: 100%;
+//    .logo{
+//        width: 30%;
+//        float: left;
+//        height: 70px;
+//        background-color: rgba(0, 0, 0, 0.5);
+//    }
+    .content-main-menu{
+        width: 100%;
+        height: 70px;
+        float: left;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        ul{
+            float: right;
+            margin-right: 5%;
+            margin-top: 15px;
+            li{
+                display: table;
+                float: left;
+                margin-right: 10px;
+                text-align: center;
+                a{
+                    width: 59.16%;
+                    display: table-cell;
+                    text-align: center;
+                    height: 35px;
+                    vertical-align: middle;
+                    @include border-radius(6px);
+                    @include font-montserratextralight(14px, 0, #fff);
+                    text-transform: uppercase;
+                    transition: background-color .4s;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.4);
+
+                    }
+                }
+            }
+        }
+    }//content-main-menu
+}
+
+//footer
+.content-footer{
+    background-color: #000725;
+    height: 170px;
+    .box-footer{
+        width: 33.33%;
+        height: 100%;
+        > h3.title-footer{
+            @include font-montserratregular(20px, 25px 0 15px 0, #fff);
+
+        }
+        > div{
+            width: 80%;
+            margin: 0 auto;
+            @include clearfix();
+            p{
+                color: #fff;
+                @include font-montserratlight(14px, 0, #fff);
+                text-align: left;
+            }
+        }//end div
+    }
+    div.box-footer:nth-child(2) p{
+        float: left;
+        i{
+            font-size: 440%; //social media font-size
+        }
+    }
+    div.box-footer:nth-child(2){
+        .wrapper-social-media{
+            display: table;
+            margin: 0 auto;
+            p:nth-child(1){ //facebook icon
+                a{
+                    float: left;
+                    color: #fff;
+                    @include prefix(transition, color .5s, webkit ms);
+                    &:hover{
+                        color: #3b5998;
+                    }
+                }
+            }
+            p:nth-child(2){ //youtube icon
+                a{
+                    color: #fff;
+                    @include prefix(transition, color .5s, webkit ms);
+                    &:hover{
+                        color: #e52d27;
+                    }
+                }
+            }
+            p:nth-child(3){ //instagram icon
+                margin-right: 0;
+                a{
+                    color: #fff;
+                    @include prefix(transition, color .5s, webkit ms);
+                    &:hover{
+                        color: #fbad50;
+                    }
+                }
+            }
+        }//end wrapper social media footer
+    }//end footer social media part
+    div.box-footer:nth-child(3) p{
+        margin-bottom: 12px; // margin-bottom to distance the infos
+    }
+}
+.after-footer{
+    background-color: #000416;
+    height: 20px;
+    p{
+        text-align: center;
+        color: #ccc;
+        @include  font-montserratlight(10px, 5px 0 0 0, #fff)
+    }
+}
+
+
+//fontello - icon-font
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */;
+}
+
+.icon-phone:before { content: '\e801'; } /* 'î ' */
+.icon-globe:before { content: '\e804';} /* 'î „' */
+.icon-check:before { content: '\e802'; } /* 'î ‚' */
+.icon-cancel:before { content: '\e803'; } /* 'î ƒ' */
+.icon-globe:before { content: '\e804'; } /* 'î „' */
+.icon-instagram-circled:before { content: '\f05e'; } /* 'ïž' */
+.icon-mail-alt:before { content: '\f0e0'; } /* 'ïƒ ' */
+.icon-youtube-play:before { content: '\f16a'; } /* 'ï…ª' */
+.icon-tty:before { content: '\f1e4'; } /* 'ï‡¤' */
+.icon-handshake-o:before { content: '\f2b5'; } /* 'ïŠµ' */
+.icon-facebook-circled:before { content: '\f30d'; } /* 'ïŒ' */
+
+//slider-carousel slick
+//.slider .slick-prev:before, .slider .slick-next:before {
+//    color: black;
+//    font-size: 30px;
+//    background-color: #fff;
+//    border-radius: 50%;
+//    width: 120px;
+//    height: 120px;
+//}
+.slider .slick-prev, .slider .slick-next{
+    border: 1px solid #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include prefix(transition, all .5s ease-out, ms webkit);
+    &:hover{
+        background-color: rgba(255, 255, 255, .4);
+        border: 0;
+    }
+}
+//.slider .slick-next{
+//    border: 1px solid #fff;
+//    width: 50px;
+//    height: 50px;
+//    border-radius: 50%
+//}
+
+.slider .slick-dots li button:before{
+    font-size: 35px;
+}
+.slider .slick-prev{
+    left: 10px ;
+    z-index: 1;
+}
+.slider .slick-next{
+    right: 10px;
+    z-index: 1;
+}
+.slider{
+    position: relative;
+    top: -70px;
+    z-index: 1;
+    width: 100%;
+    height: 95vh;
+    margin-bottom: -30px !important;
+    .item{
+        width: 100%;
+        height: 95vh;
+        text-align: center;
+        line-height: 300px;
+        a{
+            div{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.3);
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    h3{
+        position: relative;
+        top: -250px;
+        line-height: normal;
+        @include font-montserratlight(44px, 0, #fff);
+        text-transform: uppercase;
+    }
+    h4{
+        position: relative;
+        top: -200px;
+        line-height: normal;
+        width: 50%;
+        @include font-montserratextralight(34px, 0 auto, #fff);
+    }
+}
+
+//section travells
+section.section-custom{
+    div.wrapper-section{
+        //background-color: blue;
+        div{
+            position: relative; //to controll the ::before and ::after content with the icon
+            div.title-section {
+                i{
+                display: table;
+                margin: 0 auto;
+                font-size: 250%;
+                color: #515151;
+                    &:before{
+                        display: table;
+                        margin: 0 auto;
+                    }
+                }
+                div[class^="line-title"]{
+                    width: 30%;
+                    border: 1px solid #8e8e8e;
+                    margin-top: 25px;
+                    position: absolute;
+                }
+                div.line-title-left{
+                    left: 17%;
+                    top: -14%;
+                }
+                div.line-title-right{
+                    right: 17%;
+                    bottom: 50%;
+                }
+            } //end title section
+            div.content-section{
+                width: 55%;
+                margin:  5px auto 15px auto;
+
+                p{
+                    @include font-montserratextralight(20px, 0, #585858);
+                    line-height: 28px;
+                }
+            }
+        }// relative div, to control the absolute div; and wrapper everything in
+    }
+    .box-info-travel{
+        float: left;
+        width: 33.0161%;
+        height: 454px;
+        margin-right: 0.477%;
+        overflow: hidden;
+        margin-bottom: 6.42px;
+        a{
+                float: left;
+        }
+        img{
+            width: 160%; //to keep the proportion
+            height: 100%;
+            float: left;
+        }
+        .info-travel{
+            position: absolute;
+            bottom: 0;
+            height: 88px;
+            background-color: rgba(31, 38, 31, .7);
+            div{
+                float: left;
+                width: 100%;
+                p{
+                    color: #fff;
+                    display: table;
+                }
+                p:nth-child(1){
+                    @include font-montserratbold(13px, 10px 0 0 10px, #fff);
+                    text-align: left;
+                    float: left;
+                    font-size: 15.5px;
+                }
+                p:nth-child(2){
+                    @include font-montserratmedium(13px, 10px 10px 0 0, #fff);
+                    float: right;
+                    font-size: 15.5px;
+                }
+            }
+            div:nth-child(1){
+                margin-top: 30px;
+                @include prefix(transition, all .1s, ms webkit)
+            }
+            div:nth-child(2){
+                p:nth-child(1){
+                    text-transform: uppercase;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .box-info-travel:nth-child(3n){
+        margin-right: 0;
+    }// all third box don't have margin at all
+} // end section info travells
+
+//travells effects
+.box-info-travel p{
+    @include prefix(transition, all .6s, ms webkit)
+}
+.box-info-travel a:hover p{
+    color: #fff7cc !important;
+}
+.box-info-travel img{
+    transform: scale(100%);
+    //@include prefix(transform, all .7s, ms webkit )
+    @include prefix(transition, all .6s, ms webkit)
+}
+.box-info-travel a:hover img{
+    transform: scale(1.1);
+
+}
+.box-info-travel .info-travel{
+    outline: 0px solid #fff;
+    outline-offset: 0px;
+    @include prefix(transition, all .3s, ms webkit);
+}
+.box-info-travel a:hover .info-travel{
+    outline: 1px solid #fff;
+    outline-offset: -5px;
+}
+.box-info-travel a:hover .info-travel div:nth-child(1){
+    margin-top: 20px;
+}
+
+//trade section
+section.home-trades{
+    background-image: url(../img/info-travel/subaqueeportoseguro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    >div {
+        background-color: rgba(0,0,0,0.5);
+    }
+    .title-trades{
+        @include clearfix();
+        margin-top: 20px;
+        margin-bottom: 10px;
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+            @include font-montserratregular(50px, 20px, #fff);
+        }
+    }
+    .wrapper-trades-info{
+        width: 74.37%;
+        margin: 0 auto 30px auto;
+        @include clearfix();
+        .box-trade{
+            margin-right:  8.676%;
+            width: 27.55%;
+            @include clearfix();
+            a{
+                > div:nth-child(1){ //top info
+                    width: 100%;
+                    border: 1px solid #fff;
+                    height:  360px;
+                    overflow-y: hidden;
+                    background-color: rgba(0,0,0,0);
+                    @include prefix(transition, all .3s, ms webkit);
+                    p{
+                        @include font-montserratregular(18px, 0, #fff);
+                    }
+                    p:nth-child(3){
+                        margin-bottom: 20px;
+                        line-height: 30px;
+                    }
+                    .icon-cancel{
+                        color: #ff0000;
+                        font-size: 120%;
+                    }
+                    .icon-check{
+                        color: #06ff00;
+                    }
+                    .title-trade{
+                        margin: 34px 0;
+                        p{
+                            font-size: 22px;
+                        }
+                    }
+                }
+                > div:nth-child(2){ //bottom info
+                    width: 100%;
+                    background-color: #fff;
+                    height: 120px;
+                    p{
+                        line-height: 120px;
+                        @include font-montserratextrabold(50px, 0, #000267);
+                        @include prefix(transition, all .1s, ms webkit);
+                    }
+                }
+            } //end a wrapper
+            &:nth-child(3){
+                margin-right: 0px; //here
+            }
+        }
+    }
+} //end - trade section
+
+//trade section effects
+.box-trade:hover a > div:nth-child(1){
+    background-color: rgba(9,0,187,0.5) !important;
+}
+.box-trade:hover a > div:nth-child(2){
+//    background-color: rgba(9,0,187,0.5) !important;
+}
+.box-trade:hover a > div:nth-child(2) p{
+    font-size: 80px !important;
+}
+
+//home partnerships section
+section.home-partnerships{
+    .wrapper-section{
+        margin-top: 10px;
+        .content-section a{
+            @include font-montserratbold(20px, 0, #585858);
+            @include prefix(transition, all .3s, ms webkit);
+            &:hover{
+                color: #373737;
+            }
+        }
+    }
+}
+
+//slider-carousel slickx'
+//.slider-parterns .slick-prev:before, .slider-parterns .slick-next:before {
+//    color: black;
+//    font-size: 30px;
+//    background-color: #fff;
+//    border-radius: 50%;
+//    width: 120px;
+//    height: 120px;
+//}
+.slider-parterns .slick-prev, .slider-parterns .slick-next{
+    border: 1px solid #000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 10px;
+    @include prefix(transition, all .5s ease-out, ms webkit);
+    &:hover{
+        background-color: rgba(0, 0, 0, .4);
+        border: 0;
+    }
+}
+.slider-parterns .slick-dots li button:before{
+    font-size: 35px;
+}
+.slider-parterns .slick-prev{
+    left: 10px ;
+    z-index: 1;
+}
+.slider-parterns .slick-next{
+    right: 10px;
+    z-index: 1;
+}
+.slider-parterns .slick-dotted.slick-slider{
+    margin-bottom: 40px !important; //To push the section above.
+}
+.slider-parterns{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 45vh;
+
+    .item{
+        width: 100%;
+        height: 45vh;
+        text-align: center;
+        line-height: 300px;
+        a{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+//why us?
+section.why-us{
+    background-image: url(../img/info-travel/Customers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    > div{
+        background-color: rgba(0,0,0,.3);
+        .title-why{
+            @include clearfix();
+            margin-top: 20px;
+            margin-bottom: 10px;
+            h2{
+                text-align: center;
+                text-transform: uppercase;
+                @include font-montserratregular(50px, 20px, #fff);
+            }
+        }
+        .wrapper{
+            .box{
+                background-color: rgba(255,255,255,.5);
+                height: 125px;
+                margin-bottom: 10px;
+                &:before{
+                    content: '';
+                    border: 1px solid orange;
+                    height: 123px;
+                    position: absolute;
+                }
+                p{
+                    line-height: 125px;
+                    margin-left: 20px;
+                    text-align: left !important;
+                    @include font-montserratmedium(20px, none, #222);
+                }
+            }
+            .box:nth-child(1){
+                width: 25%;
+            }
+            .box:nth-child(2){
+                width: 50%;
+            }
+            .box:nth-child(3){
+                width: 75%;
+            }
+        }
+    }
+}

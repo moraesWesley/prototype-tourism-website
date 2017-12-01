@@ -1,0 +1,28 @@
+{
+  "name": "satraveltours",
+  "description": "SA Travel Tours Responsive",
+  "main": "index.js",
+  "authors": [
+    "Wesley Moraes"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Website",
+    "traveltour"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "^1.6.0",
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "jquery": "^3.2.1",
+    "reset-css": "^2.2.1"
+  }
+}

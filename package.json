@@ -1,0 +1,28 @@
+{
+  "name": "satraveltours",
+  "version": "1.0.0",
+  "description": "SA Travel Tour modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/moraesWesley/satraveltours.git"
+  },
+  "keywords": [
+    "Website",
+    "traveltour"
+  ],
+  "author": "Wesley Moraes",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/moraesWesley/satraveltours#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2"
+  }
+}
